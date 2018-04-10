@@ -1,0 +1,23 @@
+		<div id="footer">
+			&copy; 2018 Aseem Yadav &middot; <!--<a href="http://andreasviklund.com/templates/this-is-me-dark/">Template design</a> by <a href="http://andreasviklund.com/">Veselka Dobreva</a><br />Best hosted at <a href="https://www.svenskadomaner.se/?ref=template" title="Svenska Dom�ner AB">www.svenskadomaner.se</a> -->
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+			    $(".section").not(":first").hide();
+			    $("ul#menu li:first").addClass("active").show();
+
+			    $("ul#menu li").click(function() {
+			        $("ul#menu li.active").removeClass("active");
+			        $(this).addClass("active");
+			        $(".section").slideUp();
+			        $($('a',this).attr("href")).slideDown('slow');
+
+			        return false;
+			    });
+
+			});
+		</script>
+	</div>
+</body>
+</html>

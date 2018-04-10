@@ -1,0 +1,8 @@
+*.pyc
+*~
+__pycache__
+.vscode
+vserv
+db.sqlite3
+/portfolio-design-django-VS
+/resume-page
