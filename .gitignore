@@ -6,3 +6,6 @@ vserv
 db.sqlite3
 /portfolio-design-django-VS
 /resume-page
+./*.png
+ayadav-onePagePortfolio.txt
+django-resume-template.code-workspace

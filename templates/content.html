@@ -1,3 +1,5 @@
+{% load static %}
+{% load onePgFolio_extras %}
 <div id="content">
 			<div id="profile" class="section">
 				<div class="column col3">
@@ -34,33 +36,34 @@
 						</tbody>
 					</table>
 					<ul class="social">
-						<li><a href="http://gmail.com/" class="external"><img src="img/icons/gplus.png" alt="Google Plus" /></a></li>
-						<li><a href="http://facebook.com/" class="external"><img src="img/icons/facebook.png" alt="Facebook" /></a></li>
-						<li><a href="http://twitter.com/" class="external"><img src="img/icons/twitter.png" alt="Twitter" /></a></li>
-						<li><a href="http://linkedin.com/" class="external"><img src="img/icons/linkedin.png" alt="Linkedin" /></a></li>
-						<li><a href="http://flickr.com/" class="external"><img src="img/icons/flickr.png" alt="flickr" /></a></li>
+						{% for s,t in both %}
+						<li><a href="{{ s.social_links }}" class="external" target="_blank" ><img src={% static "images/icons/"|ccat:t|ccat:".png" %} alt="{{ t }}" /></a></li>						
+						{% endfor %}
 					</ul>
 				</div>
-				<div class="column col5 pl-50">
-					<img src="img/photo.jpg" alt="Aseem Yadav" />
+				<div class="own_img column col5 pl-50">
+					<img src="{% static "images/personal/personal.jpeg" %}" alt="Aseem Yadav" />
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
 					<p><a href="#">Download PDF resume</a></p>
 				</div>
 			</div>
 
 			<div id="resume" class="section">
+				<!-- <input type="checkbox"> -->
 				<table id="cv">
 					<tbody>
-						<tr>
-							<td class="col2"><div class="date">April 2012 - present</div></td>
+						{% for job in work_ex %}
+						<tr>							
+							<td class="col2"><div class="date">{{job.worked_on}}</div></td>
 							<td class="col6 pl-30">
-								<p class="company">LenixCode</p>
-								<p class="title">Senior Web Developer</p>
-								<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-							</td>
+								<p class="company">{{job.co_name}}</p>
+								<p class="title">{{job.designation}}</p>
+								<p class="description">{{job.project_description|linebreaksbr}}</p>
+							</td>							
 						</tr>
-						<tr>
-							<td class="col2"><div class="date">January 2011 - March 2012</span></td>
+						{% endfor %}
+<!-- 						<tr>
+							<td class="col2"><div class="date">July - March 2012</span></td>
 							<td class="col6 pl-30">
 								<p class="company">Bent&amp;Co</p>
 								<p class="title">Senior Web Developer</p>
@@ -74,7 +77,7 @@
 								<p class="title">Junior Web Developer</p>
 								<p class="description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 
