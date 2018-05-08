@@ -1,0 +1,15 @@
+
+<table id="cv">
+    <tbody>
+        {% for job in work_ex %}
+        <tr>							
+            <td class="col2"><div class="date">{{job.worked_on}}</div></td>
+            <td class="col6 pl-30">
+                <p class="company">{{job.co_name}}</p>
+                <p class="title">{{job.designation}}</p>
+                <p class="description">{{job.project_description|linebreaksbr}}</p>
+            </td>							
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class IndexTests(TestCase):
     def test_index_status_code(self):
-        ## using the named URL
+        ## using the named URL: thats where 'name' attribute has its use in url() method
         url = reverse('index')
         resp = self.client.get(url)
         self.assertEquals(resp.status_code,200)

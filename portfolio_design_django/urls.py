@@ -17,10 +17,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from onePgFolio import views
 from django.conf.urls.static import static
+from django.urls import path, include
 
 
 urlpatterns = [
     ## url(regex, view_function, kwargs, name)
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index')
+    path('', include('onePgFolio.urls')),
+    url(r'^$', views.index, name='index'),
+    url(r'^sort_work_ex/$', views.sort_work_ex, name="sorted_exp"),
+    url(r'^return_likes/$', views.liked_by, name="likes"),
+    # url(r'^user_feedback/$', views.feedback, name="feedback"),
 ]

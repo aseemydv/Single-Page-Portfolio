@@ -47,6 +47,18 @@ a:hover,a:focus {
   text-decoration:underline;
 }
 
+.thumbs-up {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+}
+
+.thumbs-up #like-count {
+  font: 16px 'PT Sans Narrow', Helvetica, Arial, sans-serif;
+  color: #000;
+  margin-left: 40%;  
+}
+
 p {
   margin:0 0 10px;
 }

@@ -1,0 +1,12 @@
+{% load onePgFolio_extras %}
+{% for g in gtk %}
+    {% if 'type="text"' in g|stringify %} 
+        <p class="column col4">{{ g.label_tag }} {{ g }}</p>
+    {% else %}
+        <p class="column col8">{{ g.label_tag }} {{ g }}</p>
+    {% endif %}  
+{% endfor %}
+
+
+
+<!-- {% if 'type="text"' in g|stringify %} {% endif %}-->
