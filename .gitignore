@@ -2,10 +2,11 @@
 *~
 __pycache__
 .vscode
-vserv
 db.sqlite3
-/portfolio-design-django-VS
-/resume-page
-./*.png
+/Scripts
+/tcl
+/Ignore
+/Lib
+/*.png
 ayadav-onePagePortfolio.txt
 django-resume-template.code-workspace
